@@ -1,1 +1,46 @@
 
+
+DC motor speed and direction control with a potentiometer
+In this project, you will learn how to control the speed and direction of spin of the DC 
+motor's rotor. You will use a potentiometer to provide input to the atmega328, and the 
+map() and analogWrite() functions in your sketch to make this work.
+In Project you will  learn how to control  DC motors with an  atmega328 and an 
+BJT motor driver. You will learn how to control the speed and the direction of the two 
+motors. In the role of the user interfaceyou will use a 10 kΩ potentiometer.
+
+You will use the potentiometer in two ways:
+First, you will use the potentiometer to control the speed of the motors, but not the 
+direction.
+Second, you will use the potentiometer to control both the speed and the direction o the 
+motors.
+The project  components
+Two 5V DC motors. 
+An atmega328 microcontroller.
+4 PNP BJT.
+ batteries.
+A bunch of jumper wires.
+A 10 kΩ potentiometer.
+
+connection:
+Connect the first motor to motor controller module Out1 and Out2. The order does not matter.
+Connect the first motor to motor controller module Out3 and Out4. The order does not matter.
+Connect the positive wire from the battery pack to pin +12V on the module.
+Connect the negative wire from the battery pack to pin GND on the module.
+Connect the GND pin of the module to the GND pin of the microcontroller.
+Connect Atmega328 pin C1 to BJT 1 base and BJT4 base terminal.
+Connect Atmega328 pin C0 to BJT 2 base and BJT3 base terminal.
+Connect BJT1 emitter to BJT4 emitter termal. 
+Connect BJT1 emitter to BJT4 emitter termal.
+Connect BJT1 collector to BJT2 emiiter.
+Connect BJT3 collector to BJT4 emiiter.
+Connect BJT2 collector to BJT4 collector.
+connect pull up switch to d1 and d2 pin.
+Connect the other two pins of the potentiometer to microcontroller 5V and GND.
+Inspect the wiring and ensure they are correct.
+control speed and direction with a potentiometer
+There’s one more thing to do, and that is to also be able to control the direction of 
+rotation of the motors, not just the speed. What I’d like to do is to be able to accelerate 
+the motor towards one direction when I turn the knob of the potentiometer towards the 
+left, and to the opposite direction when I turn the knob towards the right.
+
+
