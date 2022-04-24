@@ -1,1 +1,59 @@
 
+#include <LiquidCrystal.h>
+// *****    INPUT pins    *******
+int btn1 = 6;// Forward switch
+int btn2 = 7;//Reverce Switch
+int pot = A0;//Variable Speed Pot
+
+// *****    OUTPUT pins    *******
+int mt1 = A3;//Motor Terminal 1
+int mt2 = A4;//Motor Terminal 2
+
+//   *******   LCDDisplay    ********
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
+void setup() {
+   lcd.begin(16, 2);
+   pinMode(btn1,INPUT);
+   pinMode(btn2,INPUT);
+   pinMode(pot,INPUT);
+   pinMode(mt1,OUTPUT);
+   pinMode(mt2,OUTPUT);
+  
+}
+
+void loop() {
+ int bt1 = digitalRead(btn1);
+ int bt2 = digitalRead(btn2);
+
+ int val = analogRead(pot);
+ 
+ if(btn1 == 1)
+ {
+  lcd.print("Motoris Forward");
+  analogWrite(mt1,val);
+  analogWrite(mt2,LOW);
+ }
+ else
+ {
+  analogWrite(mt1,LOW);
+  analogWrite(mt2,LOW);
+ }
+
+ if(btn2 == 1)
+ {
+  lcd.print("Motoris Forward");
+  analogWrite(mt2,val);
+  analogWrite(mt1,LOW);
+ }
+ else
+ {analogWrite(mt1,LOW);
+  analogWrite(mt2,LOW);
+ }
+}
+
+
+
+
+
